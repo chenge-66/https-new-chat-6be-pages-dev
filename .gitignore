@@ -1,5 +1,6 @@
 # Local-only working artifacts. These are safety copies of files that have
 # already been replaced or removed, so they do not belong in the repository.
+outputs/*.zip
 outputs/_backup-*/
 outputs/_shots-check/
 outputs/_tmp-shots/
