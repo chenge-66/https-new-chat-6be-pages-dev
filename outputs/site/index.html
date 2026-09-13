@@ -17,6 +17,19 @@
       onload="this.media='all'"
     />
 <link rel="stylesheet" href="./src/styles.css?v=52" />
+    <style>
+      /* Critical box for the 3D pendant: guarantees a real size at mount time
+         even if the stylesheet is still loading or fails. */
+      #widget-root {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        width: 100vw;
+        height: 100vh;
+        min-height: 420px;
+      }
+    </style>
     <script src="./vendor/react.production.min.js"></script>
     <script src="./vendor/react-dom.production.min.js"></script>
     <script defer src="./vendor/gsap.min.js"></script>
@@ -4189,6 +4202,59 @@ void main() {
     };
     if (document.body) show();
     else document.addEventListener("DOMContentLoaded", show);
+  })();
+  </script>
+  <script>
+  /* Pendant safety net: if the WebGL/3D badge cannot start (blocked WebGL,
+     blocked or very slow model fetch), show a static badge instead of nothing.
+     The static badge is removed as soon as a healthy 3D canvas exists. */
+  (function () {
+    var fallback = null;
+    var ticks = 0;
+    function canvasOk() {
+      var r = document.getElementById("widget-root");
+      if (!r) return false;
+      var c = r.querySelector("canvas");
+      return !!(c && c.clientWidth > 40 && c.clientHeight > 40);
+    }
+    function removeFallback() {
+      if (fallback && fallback.parentNode) fallback.parentNode.removeChild(fallback);
+      fallback = null;
+    }
+    function showFallback() {
+      var r = document.getElementById("widget-root");
+      if (!r || fallback || canvasOk()) return;
+      var a = document.createElement("a");
+      a.className = "lanyard-fallback";
+      a.href = "./public/assets/yangxinchen-resume.pdf";
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.style.cssText = "position:absolute;top:16vh;right:6vw;width:min(310px,27vw);display:flex;flex-direction:column;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#111219;box-shadow:0 28px 60px rgba(0,0,0,.55);text-decoration:none;z-index:4";
+      var img = document.createElement("img");
+      img.src = "./yangxinchen-front-Bbo51y3J.jpg";
+      img.alt = "杨鑫晨 简历挂件";
+      img.style.cssText = "display:block;width:100%;height:auto";
+      var cap = document.createElement("span");
+      cap.textContent = "在线查看简历 ↗";
+      cap.style.cssText = "padding:12px 18px 16px;color:#efe7db;font:500 14px/1.6 Manrope,system-ui,sans-serif;letter-spacing:.02em";
+      a.appendChild(img);
+      a.appendChild(cap);
+      r.appendChild(a);
+      fallback = a;
+    }
+    var timer = setInterval(function () {
+      ticks++;
+      if (canvasOk()) {
+        removeFallback();
+        if (ticks > 8) clearInterval(timer);
+        return;
+      }
+      if (ticks >= 10) showFallback();
+      if (ticks >= 200) clearInterval(timer);
+    }, 750);
+    window.addEventListener("resize", function () {
+      if (canvasOk()) removeFallback();
+    });
   })();
   </script>
   </body>
