@@ -1,0 +1,7 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#06080D"/>
+  <circle cx="920" cy="180" r="240" fill="#6EA6FF" fill-opacity="0.2"/>
+  <circle cx="240" cy="720" r="280" fill="#C9AB6F" fill-opacity="0.16"/>
+  <text x="90" y="470" fill="#F4F5F7" font-family="Manrope, sans-serif" font-size="70" font-weight="800">BRAND VI</text>
+  <text x="90" y="540" fill="rgba(244,245,247,0.7)" font-family="Manrope, sans-serif" font-size="26">Identity System / Application</text>
+</svg>

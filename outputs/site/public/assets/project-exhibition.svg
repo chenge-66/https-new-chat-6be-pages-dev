@@ -1,0 +1,7 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#06080D"/>
+  <circle cx="300" cy="220" r="220" fill="#4EDCE6" fill-opacity="0.2"/>
+  <circle cx="900" cy="700" r="280" fill="#6EA6FF" fill-opacity="0.16"/>
+  <text x="90" y="470" fill="#F4F5F7" font-family="Manrope, sans-serif" font-size="70" font-weight="800">EXHIBITION</text>
+  <text x="90" y="540" fill="rgba(244,245,247,0.7)" font-family="Manrope, sans-serif" font-size="26">Spatial Guidance / Visual Wall</text>
+</svg>

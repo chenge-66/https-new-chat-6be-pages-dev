@@ -1,0 +1,9 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#06080D"/>
+  <circle cx="700" cy="180" r="260" fill="#6EA6FF" fill-opacity="0.22"/>
+  <circle cx="220" cy="1000" r="300" fill="#C9AB6F" fill-opacity="0.18"/>
+  <text x="90" y="540" fill="#F4F5F7" font-family="Manrope, sans-serif" font-size="180" font-weight="800">YX</text>
+  <text x="90" y="640" fill="#C9AB6F" font-family="Manrope, sans-serif" font-size="32" font-weight="500">YANG XINCHEN</text>
+  <text x="90" y="700" fill="rgba(244,245,247,0.7)" font-family="Manrope, sans-serif" font-size="24">Brand / Visual Designer</text>
+  <rect x="90" y="760" width="180" height="4" fill="#4EDCE6"/>
+</svg>
