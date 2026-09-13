@@ -467,7 +467,7 @@ const strengths = [
     label: "Planning / Delivery",
     text: "具备方案流程设计经验，熟悉各类器材使用；擅长对接业务、客户与施工方，兼顾品牌调性、落地可行性与传播效果。",
     mediaType: "video",
-    media: "./public/assets/strength-planning.mp4",
+    media: "./public/assets/works/event/p06.mp4",
     poster: "./public/assets/strength-planning-poster.jpg"
   },
   {
